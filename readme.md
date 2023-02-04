@@ -1,3 +1,3 @@
-for development use command npm run start
+for development use command ``` npm run start ```
 
-For production use command  npm run build
+For production use command  ``` npm run build ```
