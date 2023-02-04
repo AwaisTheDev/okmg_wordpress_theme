@@ -1,0 +1,51 @@
+$theme_black: #2D2C2E;
+
+$theme_green :#21b14b;
+
+
+$tablet: 1024px;
+
+$mobile: 767px;
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.67;
+}
+
+.okmg-container {
+    max-width: 1920px;
+    width: calc(100% - 200px);
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+        padding-left: 28px;
+        padding-right: 28px;
+
+    }
+}
+
+textarea {
+    font-family: 'Roboto', sans-serif;
+}

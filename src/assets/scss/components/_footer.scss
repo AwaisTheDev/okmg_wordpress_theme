@@ -1,0 +1,81 @@
+.okmg-footer {
+
+    .okmg-footer-main {
+        background-color: $theme_black;
+        color: white;
+        padding: 100px 50px 70px;
+
+        .okmg-footer-address {
+            display: flex;
+
+            .address-single {
+                width: 33.33%;
+
+                h4 {
+                    font-size: 30px;
+                    letter-spacing: 1px;
+                }
+
+                p {
+                    font-size: 16px;
+                    margin: 16px 0px;
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        .footer-social-links {
+            margin: 50px 0px 16px;
+
+            ul {
+                display: flex;
+                list-style: none;
+                color: white;
+
+                li {
+                    margin-right: 15px;
+                    font-size: 18px;
+
+
+                    a {
+                        color: white;
+                        transition: 0.3s;
+                        display: inline-block;
+
+                        &:hover {
+                            color: $theme_green;
+                            transform: translateY(-3px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-bottom-links {
+            margin: 32px 0px 16px;
+
+            ul {
+                display: flex;
+                list-style: none;
+
+                li {
+                    margin-right: 15px;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 12px;
+                        font-weight: 300;
+                        transition: 0.3s;
+
+                        &:hover {
+                            color: $theme_green;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}

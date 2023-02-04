@@ -1,0 +1,46 @@
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px 15px;
+
+    .okmg-logo {
+        a {
+            display: flex;
+            text-decoration: none;
+
+            .site-title {
+                color: $theme_black;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: 800;
+            }
+        }
+
+        img {
+            width: 70px;
+        }
+
+    }
+
+    .okmg-main-menu {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+
+            li.menu-item {
+                margin-left: 25px;
+
+                a {
+                    text-decoration: none;
+                    color: $theme_black;
+                    font-size: 16px;
+                }
+
+            }
+        }
+    }
+
+
+}
