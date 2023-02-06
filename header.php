@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://apis.google.com/js/api.js"></script>
+
 
     <?php wp_head();?>
 </head>
@@ -50,6 +52,12 @@ echo wp_nav_menu(array(
     'theme_location' => 'primary_menu',
 ))
 ?>
+                </div>
+
+                <div id="okmg_ham_menu" class='okmg_ham_menu'>
+                    <span class='line'></span>
+                    <span class='line'></span>
+                    <span class='line'></span>
                 </div>
 
             </div>

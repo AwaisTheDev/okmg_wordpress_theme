@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 25px 0px 15px;
+    position: relative;
 
     .okmg-logo {
         a {
@@ -24,22 +25,114 @@
     }
 
     .okmg-main-menu {
+
+        transition: .8s;
+
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+            background-color: white;
+            position: absolute;
+            top: 69px;
+            left: -28px;
+            width: 100vw;
+            transform: translateY(-200%);
+            z-index: 10;
+            padding: 28px;
+            border-radius: 10px;
+
+        }
+
+        &.mobile-menu-opened {
+            @media screen and (max-width: $mobile) {
+
+                transform: translateY(0%);
+                opacity: 1;
+                transition: .8s;
+            }
+        }
+
+
+
         ul {
             display: flex;
             flex-wrap: wrap;
             list-style: none;
 
+            @media screen and (max-width: $mobile) {
+                flex-direction: column;
+            }
+
             li.menu-item {
                 margin-left: 25px;
+
+                @media screen and (max-width: $mobile) {
+                    margin-left: 0px;
+                }
 
                 a {
                     text-decoration: none;
                     color: $theme_black;
                     font-size: 16px;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: $theme_green;
+                    }
+
+                    @media screen and (max-width: $mobile) {
+                        font-size: 24px;
+                        margin-bottom: 15px;
+                        display: inline-block;
+                    }
                 }
 
             }
         }
+    }
+
+    .okmg_ham_menu {
+        display: none;
+
+        @media screen and (max-width: $mobile) {
+            display: block;
+        }
+
+        span {
+            width: 30px;
+            height: 4px;
+            display: block;
+            background-color: $theme_black;
+            margin-bottom: 4px;
+            border-radius: 500px;
+            transition: 0.3s;
+            transform-origin: center;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        &.menu-open {
+
+            span {
+                &:first-child {
+                    transform: rotate(45deg);
+                    margin-bottom: 0px;
+
+                }
+
+                &:last-child {
+                    transform: rotate(-45deg);
+                    margin-top: -3px;
+                }
+
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+
+
     }
 
 

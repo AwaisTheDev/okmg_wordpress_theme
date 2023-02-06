@@ -10,8 +10,6 @@ import { deleteAsync } from 'del';
 import imagemin from 'gulp-imagemin';
 import webpack from "webpack-stream";
 import browserSync from "browser-sync";
-import postcss from "postcss";
-import autoprefixer from "autoprefixer";
 
 
 
@@ -81,7 +79,8 @@ export const scripts = () => {
                         use: {
                             loader: 'babel-loader',
                             options: {
-                                presets: ['@babel/preset-env']
+                                presets: ['@babel/preset-env'],
+                                compact: false
                             }
                         }
                     }

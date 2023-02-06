@@ -1,0 +1,17 @@
+{
+    "name": "administrator/okmgtest",
+    "autoload": {
+        "psr-4": {
+            "Administrator\\Okmgtest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Muhammad Awais-1",
+            "email": "itsme84006@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "2.12.1"
+    }
+}

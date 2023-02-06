@@ -1,19 +1,42 @@
 .okmg-footer {
 
+    .okmg-container {
+        @media screen and (max-width: $mobile) {
+            padding: 0px;
+        }
+    }
+
+
     .okmg-footer-main {
         background-color: $theme_black;
         color: white;
         padding: 100px 50px 70px;
 
+        @media screen and (max-width: $mobile) {
+            padding: 50px 28px;
+        }
+
         .okmg-footer-address {
             display: flex;
+
+            @media screen and (max-width: $mobile) {
+                flex-direction: column;
+            }
 
             .address-single {
                 width: 33.33%;
 
+                @media screen and (max-width: $mobile) {
+                    width: 100%;
+                }
+
                 h4 {
                     font-size: 30px;
                     letter-spacing: 1px;
+
+                    @media screen and (max-width: $mobile) {
+                        font-size: 24px;
+                    }
                 }
 
                 p {
@@ -27,15 +50,26 @@
         .footer-social-links {
             margin: 50px 0px 16px;
 
+            @media screen and (max-width: $mobile) {
+                margin-top: 30px;
+            }
+
             ul {
                 display: flex;
+                flex-wrap: wrap;
                 list-style: none;
                 color: white;
+
+
 
                 li {
                     margin-right: 15px;
                     font-size: 18px;
 
+                    @media screen and (max-width: $mobile) {
+                        margin-bottom: 16px;
+                        font-size: 16px;
+                    }
 
                     a {
                         color: white;
@@ -54,12 +88,22 @@
         .footer-bottom-links {
             margin: 32px 0px 16px;
 
+            @media screen and (max-width: $mobile) {
+                margin-bottom: 0px;
+            }
+
             ul {
                 display: flex;
                 list-style: none;
+                flex-wrap: wrap;
+
 
                 li {
                     margin-right: 15px;
+
+                    @media screen and (max-width: $mobile) {
+                        margin-bottom: 6px;
+                    }
 
                     a {
                         color: white;

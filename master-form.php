@@ -18,7 +18,7 @@ if (has_custom_logo()) {
     echo "<span class='site-title'>$site_title</span>";
 }
 ?>
-        <form method="POST" action="?">
+        <form id="okmg-data-form" method="POST" action="<?php echo OKMG_ROOT_DIR_URI . '/lib/sheets-api.php'; ?>">
             <div class="form-two-col-row">
                 <div class="okmg-input-wrapper">
                     <label class="okmg-label" for='msf-name'>Name</label>
@@ -50,14 +50,18 @@ if (class_exists('ACF')) { //check if ACF plugin is installed
             $input_label = get_sub_field('label');
             $input_name = get_sub_field('name');
             $input_placeholder = get_sub_field('placeholder');
-            $input_required = get_sub_field('required');
+            $input_required = (get_sub_field('required'));
+            $required = "";
+            if ($input_required == 'required') {
+                $required = 'required';
+            }
 
             echo "<label class='okmg-label' for='msf-$input_name' placeholder='$input_placeholder'>$input_label</label>";
 
             if ($input_type == "text") {
-                echo "<input class='okmg-input' type='text' name='msf-$input_name' id='msf-$input_name' placeholder='$input_placeholder' >";
+                echo "<input class='okmg-input' type='text' name='msf-$input_name' id='msf-$input_name' placeholder='$input_placeholder' $required>";
             } elseif ($input_type == "textarea") {
-                echo "<textarea class='okmg-input' name='msf-$input_name' id='msf-$input_name' placeholder='$input_placeholder' ></textarea>";
+                echo "<textarea class='okmg-input' name='msf-$input_name' id='msf-$input_name' placeholder='$input_placeholder' $required ></textarea>";
             } elseif ($input_type == "select") {
                 $options_list = get_sub_field('select_options');
                 $options = explode('|', $options_list);
@@ -90,6 +94,8 @@ if (class_exists('ACF')) { //check if ACF plugin is installed
 
         </form>
 
+
+        <img class="form-top-right" src='<?php echo OKMG_ROOT_DIR_URI ?>/dist/assets/images/form-top-right.svg'>
         <img class="form-bottom-left" src='<?php echo OKMG_ROOT_DIR_URI ?>/dist/assets/images/form-bottom-left.svg'>
         <img class="form-bottom-right" src='<?php echo OKMG_ROOT_DIR_URI ?>/dist/assets/images/form-bottom-right.svg'>
     </div>
