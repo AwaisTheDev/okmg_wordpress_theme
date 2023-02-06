@@ -68,6 +68,12 @@ jQuery(document).ready(function ($) {
                     $('.okmg-input').removeClass('has-error');
                     $('#okmg-data-form').trigger("reset");
 
+                },
+                error: function () {
+                    showResult(
+                        'error',
+                        'There is some error. Please try again later!'
+                    );
                 }
             })
         }
