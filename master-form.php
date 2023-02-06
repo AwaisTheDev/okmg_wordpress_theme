@@ -72,9 +72,7 @@ if (class_exists('ACF')) { //check if ACF plugin is installed
                     }
                     echo "</select>";
                 }
-
             }
-
             echo "</div>";
 
         }

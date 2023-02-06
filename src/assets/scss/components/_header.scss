@@ -62,7 +62,7 @@
                 flex-direction: column;
             }
 
-            li.menu-item {
+            li {
                 margin-left: 25px;
 
                 @media screen and (max-width: $mobile) {
@@ -92,6 +92,10 @@
 
     .okmg_ham_menu {
         display: none;
+
+        &:hover {
+            cursor: pointer;
+        }
 
         @media screen and (max-width: $mobile) {
             display: block;

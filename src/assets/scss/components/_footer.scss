@@ -47,7 +47,7 @@
             }
         }
 
-        .footer-social-links {
+        .footer-menu-one {
             margin: 50px 0px 16px;
 
             @media screen and (max-width: $mobile) {
@@ -59,8 +59,6 @@
                 flex-wrap: wrap;
                 list-style: none;
                 color: white;
-
-
 
                 li {
                     margin-right: 15px;
@@ -85,7 +83,7 @@
             }
         }
 
-        .footer-bottom-links {
+        .footer-menu-two {
             margin: 32px 0px 16px;
 
             @media screen and (max-width: $mobile) {

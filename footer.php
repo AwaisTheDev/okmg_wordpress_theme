@@ -29,27 +29,29 @@
             </div>
 
             <div class="footer-bottom">
-                <?php
+
+                <div class='footer-menu-one'>
+                    <?php
 echo wp_nav_menu(array(
     'menu' => 'Footer Social Links', // Do not fall back to first non-empty menu.
     'theme_location' => 'footer_social_links',
     'container_class' => 'footer-social-links',
 ))
 ?>
+                </div>
 
-                <?php
+                <div class='footer-menu-two'>
+                    <?php
 echo wp_nav_menu(array(
     'menu' => 'Footer Menu', // Do not fall back to first non-empty menu.
     'theme_location' => 'footer_menu',
     'container_class' => 'footer-bottom-links',
 ))
 ?>
-
+                </div>
 
             </div>
         </div>
-
-
     </div>
     </div>
 
