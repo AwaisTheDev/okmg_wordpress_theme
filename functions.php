@@ -9,6 +9,7 @@ if (!defined('OKMG_ROOT_DIR_URI')) {
     define('OKMG_ROOT_DIR_URI', untrailingslashit(get_template_directory_uri()));
 }
 
+require_once OKMG_ROOT_DIR_PATH . '/lib/acf-fields.php';
 require_once OKMG_ROOT_DIR_PATH . '/lib/enqueue-scripts.php';
 require_once OKMG_ROOT_DIR_PATH . '/lib/theme-support.php';
 
