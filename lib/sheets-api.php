@@ -1,4 +1,5 @@
 <?php
+
 require dirname(__FILE__, 2) . '/vendor/autoload.php';
 
 $client = new \Google_Client();
@@ -8,17 +9,17 @@ $scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive',
 ];
-$client->setScopes($scope);
+$spreadsheetId = '1OtveZz_gFxLvSFVUtgewliHkchE8hMxidnWwbAe6rcQ';
+$range = 'Sheet1';
 
+$client->setScopes($scope);
 $client->setAccessType('offline');
 $client->setPrompt('select_account consent');
 
-$path_to_JSON = dirname(__FILE__, 2) . '/lib/credentials.json';
-$client->setAuthConfig($path_to_JSON);
+$path_to_credentials = dirname(__FILE__, 2) . '/lib/credentials.json';
+$client->setAuthConfig($path_to_credentials);
 
 $service = new Google_Service_Sheets($client);
-$spreadsheetId = '1OtveZz_gFxLvSFVUtgewliHkchE8hMxidnWwbAe6rcQ';
-$range = 'Sheet1';
 
 $final_data = array();
 
@@ -42,9 +43,18 @@ $params = [
 $insert = [
     'insertDataOption' => 'INSERT_ROWS',
 ];
-$result = $service->spreadsheets_values->append(
-    $spreadsheetId,
-    $range,
-    $body,
-    $params
-);
+
+$result = false;
+try {
+    $result = $service->spreadsheets_values->append(
+        $spreadsheetId,
+        $range,
+        $body,
+        $params
+    );
+    if ($result) {
+        echo 'success';
+    }
+} catch (Exception $e) {
+    echo 'failed';
+}

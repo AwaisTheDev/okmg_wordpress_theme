@@ -87,10 +87,9 @@ if (class_exists('ACF')) { //check if ACF plugin is installed
                 <button class="okmg-submit-button" type="submit">Submit</buttom>
             </div>
 
-            <div class="okmg-result">
+            <div id="okmg-form-result">
 
             </div>
-
 
         </form>
 

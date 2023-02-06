@@ -1,24 +1,47 @@
 jQuery(document).ready(function ($) {
     $("#okmg-data-form").submit(function (e) {
 
+
+        if ($('#okmg-form-result').is(':visible')) {
+            $('#okmg-form-result').slideUp();
+        }
+        $('#okmg-form-result').removeClass('success warning error');
         e.preventDefault();
+
+        $('.okmg-submit-button').attr('disabled', true);
+        $('.okmg-submit-button').addClass('is-disabled');
+        $('.okmg-submit-button').text('Submitting form...');
         let formHasErrors = false;
 
+        if (!validateEmail($('#msf-email').val())) {
+            console.log('Please enter a valid email.');
+            $('#msf-email').addClass('has-error');
+            formHasErrors = true;
 
-        // if (!validateEmail($('#msf-email').val())) {
-        //     console.log('email is invalid');
-        //     $('#msf-email').addClass('has-error');
-        //     formHasErrors = true;
-        // }
+            showResult(
+                'Warning',
+                'Email is invalid'
+            );
+            return false;
+        }
 
-        // if (!validatePhone($('#msf-phone').val())) {
-        //     console.log('phone is invalid');
-        //     $('#msf-phone').addClass('has-error');
-        //     formHasErrors = true;
-        // }
+        if (!validatePhone($('#msf-phone').val())) {
+            console.log('phone is invalid');
+            $('#msf-phone').addClass('has-error');
+            formHasErrors = true;
+
+            showResult(
+                'warning',
+                'Phone number is invalid.'
+            );
+            return false;
+        }
 
         if (formHasErrors) {
-            console.log('Please fix error in the form to continue');
+            showResult(
+                'warning',
+                'Please fix errors to continue.'
+            );
             return false;
         } else {
             console.log('Submit form');
@@ -28,7 +51,23 @@ jQuery(document).ready(function ($) {
                 type: "POST",
                 data: { formData },
                 success: function (result) {
-                    console.log("result= " + result);
+                    $('#okmg-form-result').slideDown();
+                    console.log(result);
+                    if (result == 'success') {
+                        showResult(
+                            'success',
+                            'Thank you for submitting the form. We will get back to you soon.'
+                        );
+                    } else {
+                        showResult(
+                            'error',
+                            'There is some error. Please try again later!'
+                        );
+                    }
+                    //rest form and button
+                    $('.okmg-input').removeClass('has-error');
+                    $('#okmg-data-form').trigger("reset");
+
                 }
             })
         }
@@ -51,5 +90,16 @@ jQuery(document).ready(function ($) {
             );
     };
 
-    console.log('s');
+    const showResult = (elementClass, message) => {
+        $('#okmg-form-result').slideDown();
+        $('#okmg-form-result').addClass(elementClass);
+        $('#okmg-form-result').text(message);
+
+
+        $('.okmg-submit-button').text('Submit');
+        $('.okmg-submit-button').removeClass('is-disabled');
+        $('.okmg-submit-button').attr('disabled', false);
+    }
+
 })
+
